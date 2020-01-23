@@ -4,7 +4,7 @@ require_relative('models/star.rb')
 
 
 require('pry-byebug')
-
+Casting.delete_all()
 
 movie1 = Movie.new({'title' => 'The Coder who ran away', 'genre' => 'Comedy'})
 movie1.save()
@@ -19,12 +19,15 @@ star1.first_name = 'Jomanthony'
 star1.update()
 
 
+
 casting1 = Casting.new({'star_id' => star1.id, 'movie_id' => movie1.id, 'fee' => '2000000'})
 casting2 = Casting.new({'star_id' => star2.id, 'movie_id'=> movie1.id, 'fee' => '10000000'})
 casting3 = Casting.new({'star_id' => star2.id, 'movie_id' => movie2.id, 'fee'=>'15000000'})
 casting1.save
 casting2.save
 casting3.save
+binding.pry
+casting2.delete()
 
 
 binding.pry
